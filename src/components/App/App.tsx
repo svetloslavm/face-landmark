@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { FaceMeshCanvas, WebCamera } from "components";
 import { runDetector } from "utils";
 
+import "index.css";
+
 import "@tensorflow/tfjs";
 
 /**
@@ -30,21 +32,21 @@ import "@tensorflow/tfjs";
 export const App = () => {
   const ref = useRef<HTMLCanvasElement>(null);
 
-  const handleVideoLoad = (
+  const handleVideoLoad = async (
     videoNode: React.SyntheticEvent<HTMLVideoElement>
   ) => {
     const video = videoNode.currentTarget;
     if (video.readyState !== 4) return;
 
     if (ref.current) {
-      runDetector(video, ref.current);
+      await runDetector(video, ref.current);
     }
   };
 
   return (
-    <>
+    <div className="appWrapper">
       <WebCamera onLoadedData={handleVideoLoad} />
       <FaceMeshCanvas ref={ref} />
-    </>
+    </div>
   );
 };
