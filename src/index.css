@@ -27,11 +27,15 @@ html {
 
 .appWrapper {
   display: flex;
-  text-align: center;  
   align-items: center;
 }
 
-.mobileLayout {  
+.mobileLayout {
   position: absolute;
   left: 0;
+}
+
+.mobileLayout video,
+.mobileLayout canvas {
+  width: 100vw;
 }
