@@ -26,12 +26,5 @@ html {
 }
 
 .appWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-video,
-canvas {
   text-align: center;
 }
