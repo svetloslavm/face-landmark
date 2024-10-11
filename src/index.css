@@ -27,12 +27,11 @@ html {
 
 .appWrapper {
   display: flex;
-  text-align: center;
+  text-align: center;  
+  align-items: center;
 }
 
-.mobileLayout {
+.mobileLayout {  
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
 }
