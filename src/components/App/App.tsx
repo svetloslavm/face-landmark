@@ -44,9 +44,9 @@ export const App = () => {
   };
 
   return (
-    <div className="appWrapper">
+    <>
       <WebCamera onLoadedData={handleVideoLoad} />
       <FaceMeshCanvas ref={ref} />
-    </div>
+    </>
   );
 };
