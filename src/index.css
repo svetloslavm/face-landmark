@@ -24,3 +24,30 @@ html {
   padding: 0;
   margin: 0;
 }
+
+.container {
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;    
+  }
+
+  .container video,
+  .container canvas {
+    width: 100%;
+  }
+}
+
+/* Tablet and Desktop */
+@media (min-width: 601px) {
+  .container video,
+  .container canvas {
+    width: auto;
+    height: auto;
+  }
+}

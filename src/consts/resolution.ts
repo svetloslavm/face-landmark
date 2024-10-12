@@ -5,6 +5,6 @@
  * @property {number} height - The height of the resolution.
  */
 export const resolution = {
-  width: 720,
+  width: 650,
   height: 500,
 };
