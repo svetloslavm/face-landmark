@@ -10,6 +10,10 @@ This project is a desktop React application using TypeScript and Vite for face l
 - [ESLint Configuration](#eslint-configuration)
 - [License](#license)
 
+## Screenshot
+
+![Screenshot of Face Landmark Detection](assets/screenshot.png)
+
 ## Installation
 
 1. Clone the repository:
