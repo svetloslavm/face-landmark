@@ -34,8 +34,3 @@ html {
   position: absolute;
   left: 0;
 }
-
-.mobileLayout video,
-.mobileLayout canvas {
-  width: 100vw;
-}
