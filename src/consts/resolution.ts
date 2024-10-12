@@ -6,5 +6,5 @@
  */
 export const resolution = {
   width: 650,
-  height: 500,
+  height: 450,
 };
