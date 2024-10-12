@@ -12,7 +12,7 @@ This project is a desktop React application using TypeScript and Vite for face l
 
 ## Screenshot
 
-![Screenshot of Face Landmark Detection](./src/assets/screenshot.png)
+![Screenshot of Face Landmark Detection](assets/screenshot.png)
 
 ## Installation
 
