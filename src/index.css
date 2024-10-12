@@ -24,13 +24,3 @@ html {
   padding: 0;
   margin: 0;
 }
-
-.appWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.mobileLayout {
-  position: absolute;
-  left: 0;
-}

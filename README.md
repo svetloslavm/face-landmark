@@ -1,6 +1,6 @@
 # Face Landmark Detection [![Netlify Status](https://api.netlify.com/api/v1/badges/14a5657a-ca88-4967-a244-5e20142c7998/deploy-status)](https://app.netlify.com/sites/facelandmarkdetection/deploys)
 
-This project is a React application using TypeScript and Vite for face landmark detection. It leverages TensorFlow.js and MediaPipe for real-time face mesh detection. The application captures video from the user's webcam and detects facial landmarks, drawing them on a canvas overlay.
+This project is a desktop React application using TypeScript and Vite for face landmark detection. It leverages TensorFlow.js and MediaPipe for real-time face mesh detection. The application captures video from the user's webcam and detects facial landmarks, drawing them on a canvas overlay.
 
 ## Table of Contents
 

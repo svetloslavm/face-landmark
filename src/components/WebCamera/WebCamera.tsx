@@ -1,8 +1,8 @@
 import { FC, SyntheticEvent } from "react";
 import Webcam from "react-webcam";
+import { resolution } from "consts";
 
 interface WebCameraProps {
-  resolution: { width: number; height: number };
   onLoadedData: (video: SyntheticEvent<HTMLVideoElement>) => void;
 }
 
@@ -16,12 +16,11 @@ interface WebCameraProps {
  * @example
  * <WebCamera resolution={{ width: 1280, height: 720 }} onLoadedData={handleLoadedData} />
  */
-export const WebCamera: FC<WebCameraProps> = ({ resolution, onLoadedData }) => {
+export const WebCamera: FC<WebCameraProps> = ({ onLoadedData }) => {
   const webcamOptions = {
     videoConstraints: {
       facingMode: "user",
-      width: resolution.width,
-      height: resolution.height,
+      ...resolution,
     },
     audio: false,
   };

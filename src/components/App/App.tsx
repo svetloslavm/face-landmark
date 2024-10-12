@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import { FaceMeshCanvas, WebCamera } from "components";
 import { runDetector } from "utils";
-import { useResize } from "hooks";
-import { resolution } from "consts";
 
 import "index.css";
 
@@ -20,8 +18,6 @@ import "@tensorflow/tfjs";
  *
  * @remarks
  * - Uses the `useRef` hook to reference the canvas element.
- * - Uses the `useResize` hook to get the current window size.
- * - Determines if the device is mobile based on the window width.
  * - Handles the video load event to run the face landmark detector.
  *
  * @function
@@ -29,9 +25,6 @@ import "@tensorflow/tfjs";
  */
 export const App = () => {
   const ref = useRef<HTMLCanvasElement>(null);
-  const windowSize = useResize();
-
-  const isMobile = windowSize.width <= 768;
 
   const handleVideoLoad = async (
     videoNode: React.SyntheticEvent<HTMLVideoElement>
@@ -45,19 +38,9 @@ export const App = () => {
   };
 
   return (
-    <div className="appWrapper">
-      <div className={`${isMobile ? "mobileLayout" : ""}`}>
-        <WebCamera
-          resolution={isMobile ? resolution.mobile : resolution.desktop}
-          onLoadedData={handleVideoLoad}
-        />
-      </div>
-      <div className={`${isMobile ? "mobileLayout" : ""}`}>
-        <FaceMeshCanvas
-          ref={ref}
-          resolution={isMobile ? resolution.mobile : resolution.desktop}
-        />
-      </div>
-    </div>
+    <>
+      <WebCamera onLoadedData={handleVideoLoad} />
+      <FaceMeshCanvas ref={ref} />
+    </>
   );
 };
