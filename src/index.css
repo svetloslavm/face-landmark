@@ -26,20 +26,18 @@ html {
 }
 
 .container {
-  display: flex;  
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .container {
-    flex-direction: column;    
-  }
-
   .container video,
   .container canvas {
-    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
 
