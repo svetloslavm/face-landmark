@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaceMeshCanvas, WebCamera } from "components";
 import { runDetector } from "utils";
 
@@ -25,6 +25,7 @@ import "@tensorflow/tfjs";
  */
 export const App = () => {
   const ref = useRef<HTMLCanvasElement>(null);
+  const [loading, setLoading] = useState(true);
 
   const handleVideoLoad = async (
     videoNode: React.SyntheticEvent<HTMLVideoElement>
@@ -35,12 +36,26 @@ export const App = () => {
     if (ref.current) {
       await runDetector(video, ref.current);
     }
+
+    if (video) {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="container">
-      <WebCamera onLoadedData={handleVideoLoad} />
-      <FaceMeshCanvas ref={ref} />
+    <div>
+      {loading && (
+        <div className="loader">
+          <span className="element"></span>
+          <span className="element "></span>
+          <span className="element"></span>
+        </div>
+      )}
+
+      <div className="container">
+        <WebCamera onLoadedData={handleVideoLoad} />
+        <FaceMeshCanvas ref={ref} />
+      </div>
     </div>
   );
 };
