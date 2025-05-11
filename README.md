@@ -19,7 +19,7 @@ This project is a desktop React application using TypeScript and Vite for face l
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-repo/face-landmark.git
+   git clone https://github.com/svetloslavm/face-landmark.git
    cd face-landmark
    ```
 
